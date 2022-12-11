@@ -1,0 +1,13 @@
+// базовые подключения
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "effects";
+
+// подключения типовых компонентов страницы
+@import "./components/universal/header";
+@import "./components/universal/footer";
+
+// подключения стилей страниц
+@import "./page/index-page";
