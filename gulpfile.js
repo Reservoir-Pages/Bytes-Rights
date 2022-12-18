@@ -51,6 +51,7 @@ const distJSFile = 'main.js';
 
 const paths = {
   srcHtml:            `${srcFolder}/*.html`,
+  srcFonts:           `${srcFolder}/resources/fonts/**`,
   srcSvg:             `${srcFolder}/svg/**/*.svg`,
   srcScss:            `${srcFolder}/styles/**/*.scss`,
   srcJs:              `${srcFolder}/scripts/**/*.js`,
@@ -80,7 +81,7 @@ const cleanDev = () => {
 };
 const resourcesDev = () => {
   return src(paths.srcResourcesFolder)
-  // .pipe(dest(distFolder))
+  .pipe(dest(distFolder))
 };
 const fontsTtfToWoffDev = () => {
   src([`${paths.srcResourcesFolder}/**/*.ttf`])
@@ -228,6 +229,7 @@ const watchFilesDev = () => {
   });
 
   watch(paths.srcResourcesFolder, resourcesDev);
+  watch(paths.srcFonts, fontsTtfToWoffDev)
   watch(paths.srcImages, imagesDev);
   watch(paths.srcSvg, svgSpritesDev);
   watch(paths.srcScss, stylesDev);

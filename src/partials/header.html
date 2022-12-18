@@ -1,5 +1,21 @@
 <header class="header">
-  <div class="container">
-
+  <div class="header__container container">
+    <a class="header__link" href="/" aria-label="Ссылка на главную страницу Bytes & Rights">
+      <svg class="header__logo" width="280" height="100">
+        <use xlink:href="images/sprite.svg#LOGO"></use>
+      </svg>
+    </a>
+    <nav class="header__nav">
+      <ul class="header__nav-list list-reset">
+        <li class="header__nav-item"><a class="header__nav-link header__nav-link--active" href="#services">Услуги</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#contacts">Контакты</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#feedback">Задать вопрос</a></li>
+      </ul>
+    </nav>
+    <div class="header__languages">
+      <button class="header__languages-btn btn-reset">ENG</button>
+      <span>|</span>
+      <button class="header__languages-btn header__languages-btn--active btn-reset">RUS</button>
+    </div>
   </div>
 </header>

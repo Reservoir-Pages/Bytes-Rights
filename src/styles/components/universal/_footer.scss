@@ -1,2 +1,36 @@
 .footer {
+  padding: 120px 0;
+  background-color: $color-grey_dark;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    margin-right: 10px;
+    font-size: 0;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: $color-white_text;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 340px;
+    font-size: 0;
+  }
 }
