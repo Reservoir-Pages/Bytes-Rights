@@ -24,6 +24,8 @@ const modalOverlay = document.querySelector('.modal__overlay');
 const modalBtns = document.querySelectorAll('.services__card-btn');
 const modalWindows = document.querySelectorAll('.modal__window');
 const feedbackBtns = document.querySelectorAll('.modal__btn');
+const closeBtns = document.querySelectorAll('.modal__close');
+
 modalBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
     let path = e.currentTarget.getAttribute('data-path');
@@ -54,6 +56,17 @@ feedbackBtns.forEach(btn => {
     body.style.overflow = "auto";
   });
 });
+closeBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    modalOverlay.classList.remove('modal__overlay--visible');
+    modalWindows.forEach(modal => {
+      modal.classList.remove('modal__window--visible');
+    });
+    body.style.overflow = "auto";
+  });
+});
+
+
 // Send mail
 const form = document.querySelector('.form');
 const sendMessage = document.querySelector('.send-modal');
