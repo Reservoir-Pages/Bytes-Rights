@@ -1,10 +1,11 @@
 .html {
   box-sizing: border-box;
-  // height: 100%;
+  height: 100%;
+  min-width: 1500px;
   font-family: $font-family;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  // min-width: 1700px;
+  // min-width: 1920px-480, 1520-380, 1120-280 //
 }
 
 *,
@@ -15,15 +16,16 @@
 
 .body {
   min-height: 100%;
-  // min-width: 320px;
-  // min-width: 1600px;
-  min-width: 1250px;
-  // min-width: 1920px;
   margin: 0;
   font-family: $font-family;
   font-size: $font-size;
-  color: $color-grey_dark;
+  line-height: $line-height;
+  color: $color-dark_grey;
   background-color: $color-white;
+}
+
+.section {
+  position: relative;
 }
 
 .visually-hidden {
@@ -71,15 +73,27 @@ img {
   overflow: hidden;
 }
 
+.logo {
+  display: block;
+}
+
 .title {
   margin: 0;
   font-size: 60px;
-  line-height: 60px;
+  line-height: 80px;
   font-weight: 900;
 }
 
-@media (max-width: 705px) {
-  .container {
-    padding: 0 10px;
-  }
+.scroll-point {
+  position: absolute;
+  top: -170px;
+  // height: 1px;
+  // width: 100px;
+  // background-color: blue;
 }
+
+// @media (max-width: 705px) {
+//   .container {
+//     padding: 0 10px;
+//   }
+// }

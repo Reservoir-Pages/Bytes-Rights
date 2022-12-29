@@ -1,7 +1,11 @@
 .header {
-  padding: 35px 0;
-  margin-bottom: 100px;
-  background-color: $color-grey_dark;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 30px 0;
+  background-color: $color-dark_grey;
 
   &__container {
     display: flex;
@@ -11,59 +15,29 @@
 
   &__link {
     margin-right: 10px;
-    font-size: 0;
   }
 
   &__nav {
-    width: 100%;
-    min-width: 460px;
-    max-width: 43%;
+    min-width: 610px;
     margin-right: 10px;
-
-    &-list {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    &-item {
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
-    }
-
-    &-link {
-      color: $color-white_text;
-      white-space: nowrap;
-
-      &--active {
-        color: $color-pink;
-        text-decoration: underline;
-      }
-    }
+    font-size: 35px;
+    line-height: 41px;
+    color: $color-white_text;
   }
 
   &__languages {
-    display: flex;
-    height: auto;
-    min-width: 165px;
+    font-size: 35px;
+    line-height: 41px;
+    color: $color-white_text;
 
     &-btn {
-      font-size: 35px;
-      line-height: 41px;
-      color: $color-white_text;
+      vertical-align: middle;
+      text-transform: uppercase;
 
       &--active {
-        font-weight: 600;
+        font-weight: 700;
         color: $color-pink;
       }
-    }
-
-    span {
-      padding: 0 10px;
-      font-size: 35px;
-      line-height: 41px;
-      color: $color-white_text;
     }
   }
 }

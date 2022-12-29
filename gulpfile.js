@@ -235,6 +235,7 @@ const watchFilesDev = () => {
   watch(paths.srcScss, stylesDev);
   watch(paths.srcJs, scriptsDev);
   watch('src/scripts/**', scriptsDev);
+  watch('src/images/**', imagesDev);
   watch('src/**/*.html', htmlDev);
 };
 exports.default = series(cleanDev, resourcesDev, fontsTtfToWoffDev, imagesDev, webpImagesDev, svgSpritesDev, stylesDev, scriptsDev, htmlDev, watchFilesDev);

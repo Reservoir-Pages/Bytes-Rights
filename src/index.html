@@ -6,7 +6,8 @@
 })
 
 <body class="body">
-  @include('partials/header.html', {})
+  @include('partials/header.html',
+  {"rus":"header__languages-btn header__languages-btn--active","en":"header__languages-btn","s":"Услуги","c":"Контакты", "q":"Задать вопрос"})
   <main class="main">
     <h1 class="visually-hidden">Bytes & Rights - Ответим на все вопросы касаемые прав на информационные ресурсы и поможем избежать исков за неправомерное использование
       этих ресурсов</h1>
@@ -21,142 +22,138 @@
         </p>
       </div>
     </section>
-    <section class="services" id="services">
+    <section class="services section">
+      <div class="scroll-point" id="services"></div>
       <div class="services__container container">
         <h2 class="services__title title">
           УСЛУГИ
         </h2>
         <ul class="services__list list-reset">
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon1"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">1</div>
               <h3 class="services__card-subtitle">
                 Стратегическое консультирование
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="one">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              Помощь при планировании создания, построении бизнес-модели, привлечении финансирования и подготовке стратегических сделок
-            </p>
-            <button class="services__card-btn btn-reset" data-path="one">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon2"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">2</div>
               <h3 class="services__card-subtitle">
                 Сопровождение ИТ-проектов
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="two">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              Мы помогаем нашим клиентам успешно реализовывать амбициозные бизнес идеи в сфере ИТ, электронной коммерции и цифровых услуг. Для каждого проекта мы
-              подбираем оптимальные договорные модели, а также помогаем структурировать бизнес-процессы с учетом применимых регуляторных ограничений.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="two">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon3"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">3</div>
               <h3 class="services__card-subtitle">
                 Покупка и реструктуризация ИТ-бизнеса
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="three">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              В технологических проектах часто возникают задачи, связанные с покупкой и продажей бизнеса или с необходимостью его реструктуризации, как для повышения
-              операционной эффективности, так и для снижения налоговой нагрузки. Мы поможем структурировать сделку, составим необходимые документы и обеспечим полное
-              сопровождение и закрытие сделки.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="three">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon4"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">4</div>
               <h3 class="services__card-subtitle">
                 Сопровождение цифровых платформ
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="four">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              Все больше продуктов в мире распространяется с помощью цифровых платформ. Это касается как материальных товаров, так и цифровых сервисов. Мы помогаем
-              разработчикам и владельцам платформенных решений определить правовой статус платформы, ее компонентов и участников, подобрать оптимальные договорные модели
-              для регулирования отношений на платформе, настроить правовые инструменты для управления регуляторными рисками.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="four">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon5"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">5</div>
               <h3 class="services__card-subtitle">
                 Регистрация интеллектуальной собственности и программного обеспечения
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="five">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              Мы создаем для наших клиентов оптимальную стратегию защиты интеллектуальной собственности и помогаем оформить все необходимые формальности, будь то
-              патентование, регистрация брендов или оформление авторских прав и ноу-хау. Мы также помогаем зарегистрировать программные продукты в реестре российского
-              программного обеспечения Минцифры.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="five">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon6"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">6</div>
               <h3 class="services__card-subtitle">
                 Налоговое консультирование ИТ-бизнеса
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="six">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              Законодательство предусматривает многочисленные льготы для ИТ-компаний. Но так ли легко ими воспользоваться? Нормативные акты содержат противоречивые
-              положения, а судебная практика в этой сфере еще не устоялась. Мы помогаем нашим клиентам разобраться в хитросплетениях законодательства, подготовить
-              необходимые документы и получить налоговые льготы, а также иные преференции в ИТ сфере.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="six">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon6"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">7</div>
               <h3 class="services__card-subtitle">
                 Персональные данные
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="seven">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              Взаимодействуя с клиентами или сотрудниками практически любая компания обрабатывает персональные данные. Если бизнес не
-              ограничен территорией одной страны, количество требований увеличивается многократно. Мы поможем определить и реализовать комплекс мер по защите персональных
-              данных, соответствующий применимым требованиям в регионе присутствия клиента, существующим бизнес-процессам компании, актуальным моделям угроз и реальным
-              возможностям бизнеса по внедрению организационных мер и технических средств.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="seven">УЗНАТЬ ДЕТАЛИ</button>
           </li>
-          <li class="services__card">
-            <div class="services__card-header">
-              <svg class="services__card-icon">
-                <use xlink:href="images/sprite.svg#services-icon6"></use>
-              </svg>
+          <li class="services__item">
+            <div class="services__card">
+              <div class="services__card-number">8</div>
               <h3 class="services__card-subtitle">
                 Обучение цифровому праву
               </h3>
+              <div class="services__card-content">
+                <p class="services__card-text">
+                  Мы консультируем по стратегическим вопросам развития бизнеса, цифровой трансформации, слияний и поглощений, создания партнерств. Наши клиенты получают
+                  высочайшее качество сервиса и самые современные правовые решения
+                </p>
+                <button class="services__card-btn btn-reset" data-path="eight">Узнать детали</button>
+              </div>
             </div>
-            <p class="services__card-description">
-              ИТ-сфера развивается стремительно и правовое регулирование тоже не стоит на месте. Владельцам, менеджерам и юристам
-              ИТ-компаний необходимо понимать как регулируется их бизнес, чтобы правильно выстроить бизнес-процессы, получить возможные льготы и избежать необоснованных
-              рисков. Мы обучаем наших клиентов ключевым аспектам цифрового права, чтобы они с уверенностью шли к своим амбициозным целям.
-            </p>
-            <button class="services__card-btn btn-reset" data-path="eight">УЗНАТЬ ДЕТАЛИ</button>
           </li>
         </ul>
       </div>
     </section>
-    <section class="contacts" id="contacts">
+    <section class="contacts section">
+      <div class="scroll-point" id="contacts"></div>
       <div class="contacts__container container">
         <h2 class="contacts__title title">
           КОНТАКТЫ
@@ -167,17 +164,11 @@
               <use xlink:href="images/sprite.svg#location-icon"></use>
             </svg>
             <div class="contacts__info">
-              <a class="contacts__link"
-                href="https://yandex.ru/maps/2/saint-petersburg/house/novgorodskaya_ulitsa_23/Z0kYdQ5gTUwGQFtjfXV1cXRjZw==/?ll=30.390491%2C59.940803&z=17.65"
-                target="_blank">
-                <address class="contacts__address">
-                  Россия, Санкт-Петербург
-                  <br>
-                  191124, ул. Новгородская, д.23
-                </address>
+              <a class="contacts__link" href="https://yandex.ru/maps/geo/sankt_peterburg/53000093/?ll=30.373506%2C59.922095&z=12.44" target="_blank">
+                Россия, Санкт&#8209;Петербург
               </a>
-              <a class="contacts__link" href="tel:+78122128506">+7 (812) 212-85-06</a>
-              <a class="contacts__link" href="mailto:hello@gmail.com">hello@gmail.com</a>
+              <a class="contacts__link" href="tel:+79533689900">+7 953 368-99-00</a>
+              <a class="contacts__link" href="mailto:bytesandrights@gmail.com">bytesandrights@gmail.com</a>
             </div>
           </li>
           <li class="contacts__card">
@@ -185,27 +176,26 @@
               <use xlink:href="images/sprite.svg#location-icon"></use>
             </svg>
             <div class="contacts__info">
-              <a class="contacts__link" href="https://yandex.ru/maps/180/serbia/house/ZkkYcgJlSEMOQFpufXRxdHhjZA==/?ll=20.455169%2C44.805400&z=17.65" target="_blank">
-                <address class="contacts__address">
-                  Сербия, Белград
-                  <br>
-                  11000, ул. Войводе Миленка, д.1,
-                </address>
+              <a class="contacts__link"
+                href="https://yandex.ru/maps/10522/belgrade/?ll=20.486753%2C44.800555&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoyMjE2OTE0NTk0EhzQodGA0LHQuNGY0LAsINCR0LXQvtCz0YDQsNC0IgoNCa%2BjQRXTQzNC&z=12.74"
+                target="_blank">
+                Сербия, Белград
               </a>
-              <a class="contacts__link" href="tel:+381640461203">+381 64 046 12 03</a>
-              <a class="contacts__link" href="mailto:hello@gmail.com">hello@gmail.com</a>
+              <a class="contacts__link" href="tel:+381643582651">+381 64 3582651</a>
+              <a class="contacts__link" href="mailto:bytesandrights@gmail.com">bytesandrights@gmail.com</a>
             </div>
           </li>
         </ul>
       </div>
     </section>
-    <section class="feedback" id="feedback">
+    <section class="feedback section">
+      <div class="scroll-point" id="feedback"></div>
       <div class="feedback__container container">
         <h2 class="feedback__title title">
           ЗАДАТЬ ВОПРОС
         </h2>
         <p class="feedback__description">
-          Вы можете написать нам, воспользовавшись этой формой обратной связи
+          Вы можете написать нам с помощью этой формы обратной связи
         </p>
         <form class="feedback__form form" method="post">
           <div class="form__content">
@@ -232,12 +222,10 @@
               </div>
             </div>
             <div class="form__card">
-              <label class="form__label">
-                <textarea class="form__textarea" name="textarea" placeholder="Текст сообщения"></textarea>
-              </label>
+              <textarea class="form__textarea" name="textarea" placeholder="Текст сообщения"></textarea>
             </div>
           </div>
-          <input class="form__btn btn-reset" type="submit" value="ОТПРАВИТЬ">
+          <input class="form__btn btn-reset" type="submit" value="Отправить">
         </form>
       </div>
     </section>
@@ -259,13 +247,13 @@
             реального сектора.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
-            <li class="modal__item">➢ Разработка стратегии и подбор правовых инструментов достижения целей клиента</li>
-            <li class="modal__item">➢ Разработка структуры сделки и сопровождение сделки вплоть до ее закрытия</li>
-            <li class="modal__item">➢ Разработка юридической документации </li>
-            <li class="modal__item">➢ Ведение переговоров</li>
-            <li class="modal__item">➢ Консультирование по регуляторным и налоговым вопросам</li>
-            <li class="modal__item">➢ Юридическое сопровождение иностранных технологических компаний на российском рынке</li>
+          <ul class="modal__list">
+            <li class="modal__item">Разработка стратегии и подбор правовых инструментов достижения целей клиента</li>
+            <li class="modal__item">Разработка структуры сделки и сопровождение сделки вплоть до ее закрытия</li>
+            <li class="modal__item">Разработка юридической документации </li>
+            <li class="modal__item">Ведение переговоров</li>
+            <li class="modal__item">Консультирование по регуляторным и налоговым вопросам</li>
+            <li class="modal__item">Юридическое сопровождение иностранных технологических компаний на российском рынке</li>
           </ul>
           <a href="#feedback" class="modal__btn">СВЯЗАТЬСЯ С НАМИ</a>
         </div>
@@ -286,22 +274,22 @@
             для вашего бизнес-проекта, и найти оптимальное решение для управления ими.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
+          <ul class="modal__list">
             <li class="modal__item">
-              ➢ Анализ организационной структуры проекта, ценностного предложения, модели монетизации, процессов взаимодействия с пользователями и
+              Анализ организационной структуры проекта, ценностного предложения, модели монетизации, процессов взаимодействия с пользователями и
               иных юридически значимых аспектов проекта
             </li>
-            <li class="modal__item">➢ Выбор договорной модели взаимодействия участников проекта</li>
-            <li class="modal__item">➢ Консультирование по вопросам налоговых и иных льгот для ИТ-бизнеса</li>
-            <li class="modal__item">➢ Разработка модели распределения прав на интеллектуальную собственность в проекте</li>
-            <li class="modal__item">➢ Составление договоров и переговоры с участниками проекта</li>
-            <li class="modal__item">➢ Составление матрицы правовых рисков проекта и инструментов управления рисками</li>
-            <li class="modal__item">➢ Консультирование по правовым вопросам разработки программного обеспечения, включая open source</li>
-            <li class="modal__item">➢ Оформление и регистрация созданных технологий</li>
-            <li class="modal__item">➢ Разработка документов для оформления отношений с авторами-работниками и фрилансерами</li>
-            <li class="modal__item">➢ Консультирование по вопросам правового статуса служебных результатов интеллектуальной деятельности</li>
+            <li class="modal__item">Выбор договорной модели взаимодействия участников проекта</li>
+            <li class="modal__item">Консультирование по вопросам налоговых и иных льгот для ИТ-бизнеса</li>
+            <li class="modal__item">Разработка модели распределения прав на интеллектуальную собственность в проекте</li>
+            <li class="modal__item">Составление договоров и переговоры с участниками проекта</li>
+            <li class="modal__item">Составление матрицы правовых рисков проекта и инструментов управления рисками</li>
+            <li class="modal__item">Консультирование по правовым вопросам разработки программного обеспечения, включая open source</li>
+            <li class="modal__item">Оформление и регистрация созданных технологий</li>
+            <li class="modal__item">Разработка документов для оформления отношений с авторами-работниками и фрилансерами</li>
+            <li class="modal__item">Консультирование по вопросам правового статуса служебных результатов интеллектуальной деятельности</li>
             <li class="modal__item">
-              ➢ Разработка документации для цифровой платформы, мобильного приложения, сайта (регламенты взаимодействия с клиентами (b2c) и
+              Разработка документации для цифровой платформы, мобильного приложения, сайта (регламенты взаимодействия с клиентами (b2c) и
               бизнес-пользователями (b2b), лицензии, политики, согласия и т.д.)
             </li>
           </ul>
@@ -320,13 +308,13 @@
             сопровождение и закрытие сделки.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
-            <li class="modal__item">➢ Due diligence объекта приобретения, включая вопросы юридического статуса ИТ активов и технологий</li>
-            <li class="modal__item">➢ Юридическое и налоговое структурирование сделки с учетом существующих льгот для ИТ-компаний</li>
-            <li class="modal__item">➢ Разработка дорожной карты сделки, формирование перечня условий для ее закрытия</li>
-            <li class="modal__item">➢ Подготовка документов по сделке и сопровождение выполнения условий, необходимых для закрытии сделки</li>
-            <li class="modal__item">➢ Консультирование по регуляторным и налоговым вопросам</li>
-            <li class="modal__item">➢ Консультирование иностранных технологических компаний действующих на российском рынке</li>
+          <ul class="modal__list">
+            <li class="modal__item">Due diligence объекта приобретения, включая вопросы юридического статуса ИТ активов и технологий</li>
+            <li class="modal__item">Юридическое и налоговое структурирование сделки с учетом существующих льгот для ИТ-компаний</li>
+            <li class="modal__item">Разработка дорожной карты сделки, формирование перечня условий для ее закрытия</li>
+            <li class="modal__item">Подготовка документов по сделке и сопровождение выполнения условий, необходимых для закрытии сделки</li>
+            <li class="modal__item">Консультирование по регуляторным и налоговым вопросам</li>
+            <li class="modal__item">Консультирование иностранных технологических компаний действующих на российском рынке</li>
           </ul>
           <a href="#feedback" class="modal__btn">СВЯЗАТЬСЯ С НАМИ</a>
         </div>
@@ -343,19 +331,19 @@
             для регулирования отношений на платформе, настроить правовые инструменты для управления регуляторными рисками.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
+          <ul class="modal__list">
             <li class="modal__item">
-              ➢ Анализ организационной структуры платформы, типов пользователей, модели монетизации, процессов взаимодействия с пользователями
+              Анализ организационной структуры платформы, типов пользователей, модели монетизации, процессов взаимодействия с пользователями
               разных типов и иных юридически значимых аспектов функционирования платформы
             </li>
-            <li class="modal__item">➢ Составление матрицы правовых рисков платформы и инструментов управления рисками</li>
-            <li class="modal__item">➢ Разработка договорной модели взаимодействия участников платформы</li>
+            <li class="modal__item">Составление матрицы правовых рисков платформы и инструментов управления рисками</li>
+            <li class="modal__item">Разработка договорной модели взаимодействия участников платформы</li>
             <li class="modal__item">
-              ➢ Разработка документации для цифровой платформы, мобильного приложения, сайта (регламенты взаимодействия с клиентами (b2c) и бизнес-пользователями (b2b),
+              Разработка документации для цифровой платформы, мобильного приложения, сайта (регламенты взаимодействия с клиентами (b2c) и бизнес-пользователями (b2b),
               лицензии, политики, согласия и т.д.)
             </li>
-            <li class="modal__item">➢ Оформление интеллектуальной собственности в составе платформы</li>
-            <li class="modal__item">➢ Консультирование по вопросам налогообложения цифровых услуг и ИТ-бизнеса</li>
+            <li class="modal__item">Оформление интеллектуальной собственности в составе платформы</li>
+            <li class="modal__item">Консультирование по вопросам налогообложения цифровых услуг и ИТ-бизнеса</li>
             <a href="#feedback" class="modal__btn">СВЯЗАТЬСЯ С НАМИ</a>
         </div>
         <div class="modal__window" data-target="five">
@@ -371,23 +359,23 @@
             программного обеспечения Минцифры.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
+          <ul class="modal__list">
             <li class="modal__item">
-              ➢ Разработка стратегии защиты интеллектуальной собственности с учетом технологического профиля и организационной структуры бизнеса,
+              Разработка стратегии защиты интеллектуальной собственности с учетом технологического профиля и организационной структуры бизнеса,
               географии присутствия и планов по развитию
             </li>
             <li class="modal__item">
-              ➢ Патентование в России и за рубежом (подготовка и подача патентных заявок, оплата пошлин, ведение делопроизводства, получение
+              Патентование в России и за рубежом (подготовка и подача патентных заявок, оплата пошлин, ведение делопроизводства, получение
               патентов)
             </li>
             <li class="modal__item">
-              ➢ Регистрация товарных знаков в России и за рубежом (проведение поисков, подготовка и подача заявок, оплата пошлин, ведение делопроизводства, получение
+              Регистрация товарных знаков в России и за рубежом (проведение поисков, подготовка и подача заявок, оплата пошлин, ведение делопроизводства, получение
               свидетельств)
             </li>
-            <li class="modal__item">➢ Регистрация лицензионных прав на патенты и товарные знаки в России и за рубежом </li>
-            <li class="modal__item">➢ Регистрация программного обеспечения в Роспатенте и Минцифре (Реестр российского программного обеспечения)</li>
+            <li class="modal__item">Регистрация лицензионных прав на патенты и товарные знаки в России и за рубежом </li>
+            <li class="modal__item">Регистрация программного обеспечения в Роспатенте и Минцифре (Реестр российского программного обеспечения)</li>
             <li class="modal__item">
-              ➢ Консультирование по вопросам управленческого учета интеллектуальной собственности, помощь в создании корпоративного реестра интеллектуальной собственности
+              Консультирование по вопросам управленческого учета интеллектуальной собственности, помощь в создании корпоративного реестра интеллектуальной собственности
               и организации процесса учета
             </li>
           </ul>
@@ -406,12 +394,12 @@
             необходимые документы и получить налоговые льготы, а также иные преференции в ИТ сфере.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
-            <li class="modal__item">➢ Консультирование по налоговому маневру в ИТ отрасли</li>
-            <li class="modal__item">➢ Аудит договорной базы для целей получения налоговых льгот в ИТ</li>
-            <li class="modal__item">➢ Аккредитация ИТ-компаний в Минцифры</li>
-            <li class="modal__item">➢ Налоговое консультирование в ИТ-проектах и сделках</li>
-            <li class="modal__item">➢ Консультирование по неналоговым мерам поддержки ИТ компаний и их сотрудников</li>
+          <ul class="modal__list">
+            <li class="modal__item">Консультирование по налоговому маневру в ИТ отрасли</li>
+            <li class="modal__item">Аудит договорной базы для целей получения налоговых льгот в ИТ</li>
+            <li class="modal__item">Аккредитация ИТ-компаний в Минцифры</li>
+            <li class="modal__item">Налоговое консультирование в ИТ-проектах и сделках</li>
+            <li class="modal__item">Консультирование по неналоговым мерам поддержки ИТ компаний и их сотрудников</li>
           </ul>
           <a href="#feedback" class="modal__btn">СВЯЗАТЬСЯ С НАМИ</a>
         </div>
@@ -429,14 +417,14 @@
             организационных мер и технических средств.
           </p>
           <h4 class="modal__subtitle">Состав услуг:</h4>
-          <ul class="modal__list list-reset">
-            <li class="modal__item">➢ Определим применимое законодательство и оценим риски</li>
-            <li class="modal__item">➢ Разработаем необходимые документы (политики, согласия и т.п.)</li>
+          <ul class="modal__list">
+            <li class="modal__item">Определим применимое законодательство и оценим риски</li>
+            <li class="modal__item">Разработаем необходимые документы (политики, согласия и т.п.)</li>
             <li class="modal__item">
-              ➢ Проведем и задокументируем обязательные процедуры по GDPR: Data Protection Impact Assessment (DPIА), Transfer impact assessment (TIA), Legitimate
+              Проведем и задокументируем обязательные процедуры по GDPR: Data Protection Impact Assessment (DPIА), Transfer impact assessment (TIA), Legitimate
               Interests Assessment (LIA)
             </li>
-            <li class="modal__item">➢ Проконсультируем менеджмент и проведем обучение сотрудников</li>
+            <li class="modal__item">Проконсультируем менеджмент и проведем обучение сотрудников</li>
           </ul>
           <a href="#feedback" class="modal__btn">СВЯЗАТЬСЯ С НАМИ</a>
         </div>
@@ -458,13 +446,13 @@
             Мы проводим мастер-майнды и вебинары, посвященные правовым вопросам информационных технологий и программного обеспечения.
           </p>
           <h4 class="modal__subtitle">Там мы:</h4>
-          <ul class="modal__list list-reset">
+          <ul class="modal__list">
             <li class="modal__item">
-              ➢ Разбираемся со льготами для ИТ компаний: в каком случае компания может претендовать на налоговые льготы, когда и кому доступна льготная ипотека, как ИТ
+              Разбираемся со льготами для ИТ компаний: в каком случае компания может претендовать на налоговые льготы, когда и кому доступна льготная ипотека, как ИТ
               компании получить аккредитацию Минцифры и как внести ИТ-продукты в Реестр российского ПО
             </li>
             <li class="modal__item">
-              ➢ Говорим про ИТ-разработку с точки зрения права интеллектуальной собственности, разбираем проблематику авторского права в отношениях с разработчиками,
+              Говорим про ИТ-разработку с точки зрения права интеллектуальной собственности, разбираем проблематику авторского права в отношениях с разработчиками,
               партнерами и пользователями, а также рассматриваем юридические аспекты свободного программного обеспечения
             </li>
             <li class="modal__item">
@@ -473,12 +461,12 @@
               индивидуализации)
             </li>
             <li class="modal__item">
-              ➢ Разбираем специфику различных договорных моделей (лицензирование, заказная разработка, Time&Material vs Waterfall, договоры SaaS, IaaS и прочие
+              Разбираем специфику различных договорных моделей (лицензирование, заказная разработка, Time&Material vs Waterfall, договоры SaaS, IaaS и прочие
               ..aaS-модели)
             </li>
-            <li class="modal__item">➢ Рассказываем про регулирование в сфере обработки данных, включая персональные данные</li>
+            <li class="modal__item">Рассказываем про регулирование в сфере обработки данных, включая персональные данные</li>
             <li class="modal__item">
-              ➢ Рассматриваем вопросы ответственности цифровых платформ (ограничение конкуренции, пиратский контент, контрафакт, диффамация и т.д.)
+              Рассматриваем вопросы ответственности цифровых платформ (ограничение конкуренции, пиратский контент, контрафакт, диффамация и т.д.)
             </li>
           </ul>
           <p class="modal__description">

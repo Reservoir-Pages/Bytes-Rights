@@ -6,4 +6,4 @@
 // import './components/swipers';
 
 // Page
-import './components/button-change'
+import './components/index'

@@ -1,23 +1,20 @@
-// Navigation btn
-const navBtns = document.querySelectorAll('.header__nav-link');
-navBtns.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    navBtns.forEach(btn => {
-      btn.classList.remove('header__nav-link--active');
-    });
-    btn.classList.add('header__nav-link--active');
+// Scroll
+window.addEventListener('scroll', () => {
+  let scrollDistance = window.scrollY;
+  console.log(scrollDistance);
+  const blocks = document.querySelectorAll('.section');
+  blocks.forEach((el, i) => {
+    if (el.offsetTop - document.querySelector('.header').clientHeight - 100 <= scrollDistance) {
+      document.querySelectorAll('.nav-link').forEach((el) => {
+        if (el.classList.contains('nav-link--active')) {
+          el.classList.remove('nav-link--active');
+        }
+      });
+      document.querySelectorAll('.nav-item')[i].querySelector('a').classList.add('nav-link--active');
+    }
   });
 });
-// Change language
-const languageBtns = document.querySelectorAll('.header__languages-btn');
-languageBtns.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    languageBtns.forEach(btn => {
-      btn.classList.remove('header__languages-btn--active');
-    });
-    btn.classList.add('header__languages-btn--active');
-  });
-});
+
 // Modal
 const body = document.querySelector('.body');
 const modalOverlay = document.querySelector('.modal__overlay');
@@ -65,8 +62,6 @@ closeBtns.forEach(btn => {
     body.style.overflow = "auto";
   });
 });
-
-
 // Send mail
 const form = document.querySelector('.form');
 const sendMessage = document.querySelector('.send-modal');
@@ -95,3 +90,20 @@ privacyPolicyBtn.addEventListener('click', (e) => {
   e.preventDefault();
   alert('Эта страница находиться в разработке, попробуйте зайти позднее.');
 });
+// Services card
+const cards = document.querySelectorAll('.services__card');
+cards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    cards.forEach(card => {
+      card.classList.remove('is-active');
+    });
+    card.classList.add('is-active');
+  });
+  // document.addEventListener('click', (e) => {
+  //   cards.forEach(card => {
+  //     card.classList.remove('is-active');
+  //   });
+  // });
+});
+
+

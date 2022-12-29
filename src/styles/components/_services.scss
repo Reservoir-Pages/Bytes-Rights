@@ -1,0 +1,88 @@
+.services {
+  padding: 100px 0;
+  background-color: $color-dark_blue;
+  background-image: url("../../images/services-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title {
+    padding-left: 10px;
+    margin-bottom: 130px;
+    border-left: 6px solid $color-pink;
+    color: $color-white_text;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 220px 100px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__card {
+    height: 300px;
+    padding: 30px 10px 10px 50px;
+    border-radius: 4px;
+    font-size: 30px;
+    line-height: 45px;
+    color: $color-dark_grey;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      position: absolute;
+      z-index: 1;
+      height: max-content;
+      display: flex;
+      background-color: $color-pink;
+      color: $color-white;
+
+      .services__card {
+        &-content {
+          display: block;
+          padding-left: 50px;
+          padding-bottom: 80px;
+        }
+
+        &-text {
+          width: 550px;
+          margin: 0;
+          margin-bottom: 60px;
+          font-size: 25px;
+          line-height: 30px;
+        }
+
+        &-btn {
+          padding: 15px 40px;
+          border-radius: 4px;
+          font-size: 30px;
+          line-height: 49px;
+          color: $color-white;
+          text-transform: uppercase;
+          background-color: $color-dark_blue;
+          box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+
+    &-number {
+      position: absolute;
+      top: -10px;
+      left: -50px;
+      font-size: 150px;
+      font-weight: 700;
+      color: $color-white;
+    }
+
+    &-subtitle {
+      margin: 0;
+    }
+
+    &-content {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.feedback {
+  padding: 110px 0 190px;
+  background-image: url("../images/feedback-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title {
+    padding-left: 10px;
+    margin-bottom: 80px;
+    border-left: 6px solid $color-pink;
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 140px;
+  }
+}

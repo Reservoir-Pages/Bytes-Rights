@@ -8,6 +8,15 @@
 // подключения типовых компонентов страницы
 @import "./components/universal/header";
 @import "./components/universal/footer";
+@import "./components/universal/nav";
+@import "./components/universal/form";
+@import "./components/universal/checkbox";
+@import "./components/universal/modals";
+
+// подключения компонентов страницы
+@import "./components/about";
+@import "./components/services";
+@import "./components/contacts";
+@import "./components/feedback";
 
 // подключения стилей страниц
-@import "./page/index-page";

@@ -7,12 +7,20 @@
 }
 
 a,
-button,
-input,
-label {
+button {
   transition: opacity 0.3s ease-in-out;
 
   &:hover {
     opacity: 0.5;
   }
 }
+// a,
+// button,
+// input,
+// label {
+//   transition: opacity 0.3s ease-in-out;
+
+//   &:hover {
+//     opacity: 0.5;
+//   }
+// }
