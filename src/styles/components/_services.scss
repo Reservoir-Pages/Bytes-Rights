@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  &__container {
+    overflow: visible;
+  }
+
   &__title {
     padding-left: 10px;
     margin-bottom: 130px;
@@ -20,6 +24,26 @@
 
   &__item {
     position: relative;
+    height: 300px;
+
+    &:nth-child(3n + 1) {
+      .services__card:hover {
+        left: 0;
+      }
+    }
+
+    &:nth-child(3n + 2) {
+      .services__card:hover {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &:nth-child(3n + 3) {
+      .services__card:hover {
+        right: 0;
+      }
+    }
   }
 
   &__card {
@@ -44,13 +68,13 @@
         &-content {
           display: block;
           padding-left: 50px;
-          padding-bottom: 80px;
+          padding-bottom: 30px;
         }
 
         &-text {
           width: 550px;
           margin: 0;
-          margin-bottom: 60px;
+          margin-bottom: 40px;
           font-size: 25px;
           line-height: 30px;
         }
@@ -66,15 +90,6 @@
           box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
         }
       }
-    }
-
-    &-number {
-      position: absolute;
-      top: -10px;
-      left: -50px;
-      font-size: 150px;
-      font-weight: 700;
-      color: $color-white;
     }
 
     &-subtitle {

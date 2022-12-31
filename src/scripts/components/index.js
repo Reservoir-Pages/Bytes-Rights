@@ -15,6 +15,12 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// Language buttons
+const btnEng = document.querySelector('#en');
+btnEng.addEventListener('click', (e) => {
+  alert('Англоязычная страница на стадии разработки');
+});
+
 // Modal
 const body = document.querySelector('.body');
 const modalOverlay = document.querySelector('.modal__overlay');
@@ -22,7 +28,6 @@ const modalBtns = document.querySelectorAll('.services__card-btn');
 const modalWindows = document.querySelectorAll('.modal__window');
 const feedbackBtns = document.querySelectorAll('.modal__btn');
 const closeBtns = document.querySelectorAll('.modal__close');
-
 modalBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
     let path = e.currentTarget.getAttribute('data-path');
@@ -62,6 +67,7 @@ closeBtns.forEach(btn => {
     body.style.overflow = "auto";
   });
 });
+
 // Send mail
 const form = document.querySelector('.form');
 const sendMessage = document.querySelector('.send-modal');
@@ -84,12 +90,14 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   sendMail();
 });
+
 // Privacy policy
 const privacyPolicyBtn = document.querySelector('.checkbox__link');
 privacyPolicyBtn.addEventListener('click', (e) => {
   e.preventDefault();
   alert('Эта страница находиться в разработке, попробуйте зайти позднее.');
 });
+
 // Services card
 const cards = document.querySelectorAll('.services__card');
 cards.forEach(card => {

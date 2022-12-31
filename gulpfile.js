@@ -75,6 +75,8 @@ const paths = {
 };
 let isProd = false; // dev by default
 
+
+
 // DEV //
 const cleanDev = () => {
   return del(distFolder)
@@ -240,6 +242,8 @@ const watchFilesDev = () => {
 };
 exports.default = series(cleanDev, resourcesDev, fontsTtfToWoffDev, imagesDev, webpImagesDev, svgSpritesDev, stylesDev, scriptsDev, htmlDev, watchFilesDev);
 
+
+
 // BUILD //
 const cleanBuild = () => {
   return del(buildFolder)
@@ -397,10 +401,7 @@ const htmlMinifyBuild = () => {
     'append': {
       'key': '_v',
       'cover': 0,
-      'to': [
-        'css',
-        'js',
-      ]
+      'to': 'all'
     },
     'output': {
       'file': 'version.json'
@@ -434,6 +435,8 @@ const toProd = (done) => {
   done();
 };
 exports.build = series(toProd, cleanBuild, resourcesBuild, fontsTtfToWoffBuild, imagesBuild, webpImagesBuild, svgSpritesBuild, stylesBuild, scriptsBuild, htmlBuild, htmlMinifyBuild, watchFilesBuild);
+
+
 
 // BACKEND //
 const stylesBackend = () => {
@@ -489,6 +492,8 @@ const scriptsBackend = () => {
 }
 exports.backend = series(toProd, cleanBuild, resourcesBuild, fontsTtfToWoffBuild, imagesBuild, webpImagesBuild, svgSpritesBuild, stylesBackend, scriptsBackend, htmlBuild, watchFilesBuild);
 
+
+
 // DEPLOY //
 const deploy = () => {
   let ftpData = JSON.parse(fs.readFileSync('ftp-data.json', 'utf-8'));
@@ -509,6 +514,8 @@ const deploy = () => {
   .pipe(connect.dest(ftpNameFolder));
 }
 exports.deploy = deploy;
+
+
 
 // ZIP //
 const zipFile = () => {
