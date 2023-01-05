@@ -2,7 +2,7 @@
   box-sizing: border-box;
   height: 100%;
   min-width: 1500px;
-  font-family: $font-family;
+  // font-family: $font-family;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   // min-width: 1920px-480, 1520-380, 1120-280 //
@@ -79,9 +79,10 @@ img {
 
 .title {
   margin: 0;
+  font-family: "RobotoSlab", sans-serif;
   font-size: 60px;
   line-height: 80px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .scroll-point {

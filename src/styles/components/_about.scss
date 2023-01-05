@@ -1,13 +1,17 @@
 .about {
-  padding-top: 275px;
+  // padding-top: 275px;
+  padding-top: 95px;
   padding-bottom: 120px;
 
   &__title {
     margin-bottom: 30px;
-    font-weight: 700;
   }
 
   &__description {
     margin: 0;
+
+    span {
+      color: $color-pink;
+    }
   }
 }

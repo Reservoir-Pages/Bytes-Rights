@@ -1,6 +1,7 @@
 .checkbox {
   font-size: 25px;
   line-height: 30px;
+  font-weight: 300;
 
   & label {
     position: relative;
@@ -37,6 +38,7 @@
     }
 
     span {
+      width: 99%;
       display: inline-block;
       text-align: left;
       padding-left: 60px;

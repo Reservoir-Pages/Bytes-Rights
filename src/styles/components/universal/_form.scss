@@ -1,6 +1,5 @@
 .form {
   font-size: 30px;
-  color: #3c3e4b;
 
   &__content {
     display: flex;
@@ -32,12 +31,15 @@
     width: 100%;
     padding: 0 40px;
     border-radius: 4px;
+    color: #3c3e4b;
     background-color: $color-white;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
     opacity: 0.9;
 
     &::placeholder {
       font-size: 25px;
+      font-weight: 300;
+      color: $color-grey;
     }
   }
 
@@ -46,8 +48,15 @@
     width: 100%;
     padding: 30px;
     border-radius: 4px;
+    color: #3c3e4b;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
     opacity: 0.9;
+
+    &::placeholder {
+      font-size: 25px;
+      font-weight: 300;
+      color: $color-grey;
+    }
   }
 
   &__btn {
@@ -55,6 +64,7 @@
     padding: 30px 120px;
     margin: 0 auto;
     border-radius: 4px;
+    font-family: "RobotoSlab", sans-serif;
     font-weight: 600;
     color: $color-white_text;
     text-transform: uppercase;

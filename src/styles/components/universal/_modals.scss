@@ -53,6 +53,7 @@
     margin: 0;
     margin-bottom: 80px;
     border-left: 6px solid $color-pink;
+    font-family: "RobotoSlab", sans-serif;
     font-size: 60px;
     line-height: 75px;
     text-transform: uppercase;
@@ -79,7 +80,9 @@
     padding: 30px 60px;
     margin: 0 auto;
     border-radius: 4px;
+    font-family: "RobotoSlab", sans-serif;
     color: $color-white_text;
+    font-weight: 700;
     background-color: $color-pink;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
   }
