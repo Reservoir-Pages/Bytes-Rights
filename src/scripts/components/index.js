@@ -1,7 +1,6 @@
 // Scroll
 window.addEventListener('scroll', () => {
   let scrollDistance = window.scrollY;
-  console.log(scrollDistance);
   const blocks = document.querySelectorAll('.section');
   blocks.forEach((el, i) => {
     if (el.offsetTop - document.querySelector('.header').clientHeight - 100 <= scrollDistance) {
