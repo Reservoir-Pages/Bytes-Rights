@@ -41,13 +41,13 @@ const gutil                         = require('gulp-util');
 const fs              = require('fs');
 // Zip
 const zip                           = require('gulp-zip');
+
 // Path
 const ftpNameFolder = './Bytes-rights/public_html';
-// const ftpNameFolder = nodePath.basename(nodePath.resolve()); // ceramics-gulp
 const srcFolder = './src';
 const distFolder = './dist';
 const buildFolder = './build';
-const distJSFile = 'main.js';
+const jsFileName = 'main.js';
 
 const paths = {
   srcHtml:            `${srcFolder}/*.html`,
@@ -55,24 +55,25 @@ const paths = {
   srcSvg:             `${srcFolder}/svg/**/*.svg`,
   srcScss:            `${srcFolder}/styles/**/*.scss`,
   srcJs:              `${srcFolder}/scripts/**/*.js`,
+  
   srcJsMain:          `${srcFolder}/scripts/**/main.js`,
   srcJsVendor:        `${srcFolder}/scripts/vendor/**/*.js`,
   srcImages:          `${srcFolder}/images/**/**.{jpg,jpeg,png,svg}`,
   srcStylesFolder:    `${srcFolder}/styles`,
   srcImgFolder:       `${srcFolder}/images`,
-  // srcPartialsFolder:  `${srcFolder}/partials`,
   srcResourcesFolder: `${srcFolder}/resources/**`,
-
+  // Dist
   distFonts:          `${distFolder}/fonts`,
   distImgFolder:      `${distFolder}/images`,
   distCssFolder:      `${distFolder}/styles`,
   distJsFolder:       `${distFolder}/scripts`,
-
+  // Build
   buildFonts:         `${buildFolder}/fonts`,
   buildImgFolder:     `${buildFolder}/images`,
   buildCssFolder:     `${buildFolder}/styles`,
   buildJsFolder:      `${buildFolder}/scripts`,
 };
+
 let isProd = false; // dev by default
 
 
@@ -180,7 +181,7 @@ const scriptsDev = () => {
     .pipe(webpackStream({
       mode: isProd ? 'production' : 'development',
       output: {
-        filename: distJSFile,
+        filename: jsFileName,
       },
       module: {
         rules: [{
@@ -236,6 +237,7 @@ const watchFilesDev = () => {
   watch(paths.srcSvg, svgSpritesDev);
   watch(paths.srcScss, stylesDev);
   watch(paths.srcJs, scriptsDev);
+
   watch('src/scripts/**', scriptsDev);
   watch('src/images/**', imagesDev);
   watch('src/**/*.html', htmlDev);
@@ -350,7 +352,7 @@ const scriptsBuild = () => {
     .pipe(webpackStream({
       mode: isProd ? 'production' : 'development',
       output: {
-        filename: distJSFile,
+        filename: jsFileName,
       },
       module: {
         rules: [{

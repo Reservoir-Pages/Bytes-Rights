@@ -1,26 +1,27 @@
-*,
-*::before,
-*::after {
-  &:focus {
-    border: 1px solid red;
-  }
-}
-
 a,
 button {
   transition: opacity 0.3s ease-in-out;
 
   &:hover {
+    opacity: 0.7;
+  }
+  &:active {
     opacity: 0.5;
   }
+  &:focus-visible {
+    outline: 1px solid red;
+  }
 }
-// a,
-// button,
-// input,
-// label {
-//   transition: opacity 0.3s ease-in-out;
 
-//   &:hover {
-//     opacity: 0.5;
-//   }
+button {
+  &:focus-visible {
+    outline: 5px solid black;
+  }
+}
+
+// &:hover {
+// }
+// &:active {
+// }
+// &:focus {
 // }

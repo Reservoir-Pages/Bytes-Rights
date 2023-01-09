@@ -12,6 +12,7 @@
 *::before,
 *::after {
   box-sizing: inherit;
+  outline: none;
 }
 
 .body {
@@ -93,8 +94,8 @@ img {
   // background-color: blue;
 }
 
-// @media (max-width: 705px) {
-//   .container {
-//     padding: 0 10px;
-//   }
-// }
+@media (max-width: 705px) {
+  .container {
+    padding: 0 40px;
+  }
+}

@@ -1,9 +1,10 @@
 // Scroll
 window.addEventListener('scroll', () => {
   let scrollDistance = window.scrollY;
+  // console.log(scrollDistance);
   const blocks = document.querySelectorAll('.section');
   blocks.forEach((el, i) => {
-    if (el.offsetTop - document.querySelector('.header').clientHeight - 100 <= scrollDistance) {
+    if (el.offsetTop - document.querySelector('.header').clientHeight - 1000 <= scrollDistance) {
       document.querySelectorAll('.nav-link').forEach((el) => {
         if (el.classList.contains('nav-link--active')) {
           el.classList.remove('nav-link--active');
@@ -29,7 +30,10 @@ const feedbackBtns = document.querySelectorAll('.modal__btn');
 const closeBtns = document.querySelectorAll('.modal__close');
 modalBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
+
     let path = e.currentTarget.getAttribute('data-path');
+
+
     modalWindows.forEach(modal => {
       modal.classList.remove('modal__window--visible');
     });
@@ -37,6 +41,11 @@ modalBtns.forEach(btn => {
     document.querySelector(`[data-target="${path}"]`).classList.add('modal__window--visible');
     modalOverlay.classList.add('modal__overlay--visible');
     body.style.overflow = "hidden";
+
+
+    // document.querySelector(`[data-target="${path}"]`).querySelector('.modal__close');
+
+    // console.log(document.querySelector(`[data-target="${path}"]`).querySelector('.modal__close'));
   });
 });
 modalOverlay.addEventListener('click', (e) => {

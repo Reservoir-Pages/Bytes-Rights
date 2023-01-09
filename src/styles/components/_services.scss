@@ -1,7 +1,7 @@
 .services {
   padding: 100px 0;
   background-color: $color-dark_blue;
-  background-image: url("../../images/services-bg.png");
+  background-image: url("../../images/services-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -47,6 +47,7 @@
   }
 
   &__card {
+    position: absolute;
     display: flex;
     align-items: center;
     height: 300px;
@@ -59,39 +60,16 @@
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
 
-    &:hover {
-      position: absolute;
+    &:hover,
+    &:focus-within {
       z-index: 1;
       height: max-content;
       display: flex;
       background-color: $color-pink;
       color: $color-white;
 
-      .services__card {
-        &-content {
-          display: block;
-          padding-left: 50px;
-          padding-bottom: 30px;
-        }
-
-        &-text {
-          width: 550px;
-          margin: 0;
-          margin-bottom: 40px;
-          font-size: 25px;
-          line-height: 30px;
-        }
-
-        &-btn {
-          padding: 15px 40px;
-          border-radius: 4px;
-          font-size: 30px;
-          line-height: 49px;
-          color: $color-white;
-          text-transform: uppercase;
-          background-color: $color-dark_blue;
-          box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-        }
+      .services__card-content {
+        display: block;
       }
     }
 
@@ -102,16 +80,33 @@
 
     &-content {
       display: none;
+      padding-left: 50px;
+      padding-bottom: 30px;
     }
 
     &-text {
+      width: 550px;
+      margin: 0;
+      margin-bottom: 40px;
       font-family: "Roboto", sans-serif;
       font-size: 25px;
       line-height: 30px;
     }
 
     &-btn {
+      padding: 15px 40px;
+      border-radius: 4px;
       font-family: "RobotoSlab", sans-serif;
+      font-size: 30px;
+      line-height: 49px;
+      color: $color-white;
+      text-transform: uppercase;
+      background-color: $color-dark_blue;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+
+      &:focus {
+        outline: 1px solid $color-white;
+      }
     }
   }
 }
