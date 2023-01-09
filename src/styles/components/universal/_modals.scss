@@ -40,11 +40,8 @@
     position: absolute;
     top: 40px;
     right: 30px;
+    font-size: 0;
     cursor: pointer;
-
-    &:focus {
-      background-color: black;
-    }
 
     &-icon {
       height: 20px;
@@ -89,10 +86,6 @@
     font-weight: 700;
     background-color: $color-pink;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-
-    &:focus {
-      background-color: yellow;
-    }
   }
 }
 

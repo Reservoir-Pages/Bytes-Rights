@@ -1,21 +1,19 @@
-a,
-button {
-  transition: opacity 0.3s ease-in-out;
+@media (min-width: 768px) {
+  a,
+  button {
+    transition: opacity 0.3s ease-in-out;
 
-  &:hover {
-    opacity: 0.7;
-  }
-  &:active {
-    opacity: 0.5;
-  }
-  &:focus-visible {
-    outline: 1px solid red;
-  }
-}
+    &:hover {
+      opacity: 0.7;
+    }
 
-button {
-  &:focus-visible {
-    outline: 5px solid black;
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-black;
+    }
   }
 }
 
