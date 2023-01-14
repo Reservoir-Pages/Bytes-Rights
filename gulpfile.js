@@ -55,7 +55,7 @@ const paths = {
   srcSvg:             `${srcFolder}/svg/**/*.svg`,
   srcScss:            `${srcFolder}/styles/**/*.scss`,
   srcJs:              `${srcFolder}/scripts/**/*.js`,
-  
+
   srcJsMain:          `${srcFolder}/scripts/**/main.js`,
   srcJsVendor:        `${srcFolder}/scripts/vendor/**/*.js`,
   srcImages:          `${srcFolder}/images/**/**.{jpg,jpeg,png,svg}`,
