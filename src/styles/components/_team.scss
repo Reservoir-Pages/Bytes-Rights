@@ -1,0 +1,90 @@
+.team {
+  padding: 110px 0 140px;
+  background-image: url("../images/feedback-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title {
+    padding-left: 10px;
+    margin-bottom: 80px;
+    border-left: 6px solid $color-pink;
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 100px;
+
+    span {
+      color: $color-pink;
+    }
+  }
+}
+
+.team-swiper {
+  padding-bottom: 220px;
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__descr {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 14px 12px 20px 25px;
+    max-width: 70%;
+    color: $color-white;
+    background-color: $color-pink;
+
+    &-title {
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    &-position {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  .swiper {
+    &-slide {
+      display: flex;
+      justify-content: end;
+      padding-bottom: 90px;
+    }
+
+    &-button-next {
+      top: 90%;
+      height: 20px;
+      width: 230px;
+      font-size: 16px;
+
+      &::after {
+        content: "";
+        padding-right: 100px;
+        height: 100%;
+        width: 100%;
+        // background-image: url("../images/teams-man1.jpg");
+        background-color: blue;
+      }
+    }
+
+    &-button-prev {
+      top: 90%;
+      height: 20px;
+      width: 230px;
+
+      &::after {
+        content: "";
+        padding-right: 100px;
+        height: 100%;
+        width: 100%;
+        // background-image: url("../images/teams-man1.jpg");
+        background-color: blue;
+      }
+    }
+  }
+}

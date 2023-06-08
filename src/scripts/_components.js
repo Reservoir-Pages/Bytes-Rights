@@ -7,3 +7,4 @@
 
 // Page
 import './components/index'
+import './components/swipers'
