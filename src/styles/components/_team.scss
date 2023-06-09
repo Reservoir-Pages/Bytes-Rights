@@ -59,31 +59,36 @@
     &-button-next {
       top: 90%;
       height: 20px;
-      width: 230px;
+      width: 365px;
       font-size: 16px;
+      color: $color-pink;
+
+      span {
+        margin-right: 10px;
+      }
 
       &::after {
         content: "";
-        padding-right: 100px;
-        height: 100%;
-        width: 100%;
+        // padding-right: 100px;
+        // height: 100%;
+        // width: 100%;
         // background-image: url("../images/teams-man1.jpg");
-        background-color: blue;
+        // background-color: blue;
       }
     }
 
     &-button-prev {
       top: 90%;
-      height: 20px;
-      width: 230px;
+      height: 24px;
+      width: 234px;
 
       &::after {
         content: "";
-        padding-right: 100px;
-        height: 100%;
-        width: 100%;
+        // padding-right: 100px;
+        // height: 100%;
+        // width: 100%;
         // background-image: url("../images/teams-man1.jpg");
-        background-color: blue;
+        // background-color: blue;
       }
     }
   }
