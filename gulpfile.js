@@ -3,21 +3,21 @@ const { src, dest, series, watch }  = require('gulp'); // подключаем �
 const gulpif                        = require('gulp-if'); // условие если
 const nodePath                      = require('path'); // получение названия папки проекта
 // Удаление
-const del                           = require('del'); // подключаем, ранее установленную библиотеку del(для удаления директорий и файлов)
+const del                           = require('del'); // подключаем, библиотеку del(для удаления директорий и файлов)
 // Создание спрайта
-const svgSprite                     = require('gulp-svg-sprite'); // подключаем, ранее установленную библиотеку создания SVG-спрайтов из svg
+const svgSprite                     = require('gulp-svg-sprite'); // подключаем, библиотеку создания SVG-спрайтов из svg
 const svgmin                        = require('gulp-svgmin');
 const cheerio                       = require('gulp-cheerio');
 const replace                       = require('gulp-replace'); // поиск и замена
 // Работа с HTML
 const fileInclude                   = require('gulp-file-include');
 const typograf                      = require('gulp-typograf');
-const htmlMin                       = require('gulp-htmlmin'); // подключаем, ранее установленную библиотеку минификации html
+const htmlMin                       = require('gulp-htmlmin'); // подключаем, библиотеку минификации html
 var version                         = require('gulp-version-number');
 // Работа с CSS/SCSS
 const sass                          = require('gulp-sass')(require('sass'));
-const autoprefixer                  = require('gulp-autoprefixer'); // подключаем, ранее установленную библиотеку autoprefixer
-const cleanCSS                      = require('gulp-clean-css'); // подключаем, ранее установленную библиотеку clean-css
+const autoprefixer                  = require('gulp-autoprefixer'); // подключаем, библиотеку autoprefixer
+const cleanCSS                      = require('gulp-clean-css'); // подключаем, библиотеку clean-css
 // Работа с JS
 const webpack                       = require('webpack');
 const webpackStream                 = require('webpack-stream');
@@ -28,22 +28,24 @@ const sourcemaps                    = require('gulp-sourcemaps'); // работ�
 const plumber                       = require('gulp-plumber'); // обработка ошибок
 const notify                        = require('gulp-notify'); // показывает ошибки и подсказки сборки
 // Обновление страницы
-const browserSync                   = require('browser-sync').create() // подключаем, ранее установленную библиотеку browser-sync, как гласит спека добавляем .create()
+const browserSync                   = require('browser-sync').create() // подключаем, библиотеку browser-sync, как гласит спека добавляем .create()
 // Шрифты
 const ttf2woff                      = require('gulp-ttf2woff');
 const ttf2woff2                     = require('gulp-ttf2woff2');
 // Изображения
-const image                         = require('gulp-imagemin'); // подключаем, ранее установленную библиотеку оптимизации изображений // version 6.3.1 no work need to setup 6.2.1
+const image                         = require('gulp-imagemin'); // подключаем, библиотеку оптимизации изображений // version 6.3.1 no work need to setup 6.2.1
 const webp                          = require('gulp-webp');
 // Deploy
 const ftp                           = require('vinyl-ftp');
 const gutil                         = require('gulp-util');
-const fs              = require('fs');
+const fs                            = require('fs');
 // Zip
 const zip                           = require('gulp-zip');
 
+let isProd = false; // dev by default
+
 // Path
-const ftpNameFolder = './Bytes-rights/public_html';
+// const ftpNameFolder = './Bytes-rights/public_html';
 const srcFolder = './src';
 const distFolder = './dist';
 const buildFolder = './build';
@@ -74,18 +76,17 @@ const paths = {
   buildJsFolder:      `${buildFolder}/scripts`,
 };
 
-let isProd = false; // dev by default
-
-
 
 // DEV //
 const cleanDev = () => {
   return del(distFolder)
 };
+
 const resourcesDev = () => {
   return src(paths.srcResourcesFolder)
   .pipe(dest(distFolder))
 };
+
 const fontsTtfToWoffDev = () => {
   src([`${paths.srcResourcesFolder}/**/*.ttf`])
   .pipe(plumber(notify.onError({
@@ -98,6 +99,7 @@ const fontsTtfToWoffDev = () => {
   .pipe(ttf2woff2())
   .pipe(dest(distFolder))
 }
+
 const imagesDev = () => {
   return src(paths.srcImages)
   .pipe(plumber(notify.onError({
@@ -115,11 +117,13 @@ const imagesDev = () => {
   ])))
   .pipe(dest(paths.distImgFolder))
 };
+
 const webpImagesDev = () => {
   return src(paths.srcImages)
     .pipe(webp())
     .pipe(dest(paths.distImgFolder))
 };
+
 const svgSpritesDev = () => {
   return src(paths.srcSvg)
     .pipe(
@@ -151,6 +155,7 @@ const svgSpritesDev = () => {
     }))
     .pipe(dest(paths.distImgFolder));
 }
+
 const stylesDev = () => {
   return src(paths.srcScss)
   .pipe(plumber(notify.onError({
@@ -171,6 +176,7 @@ const stylesDev = () => {
   .pipe(dest(paths.distCssFolder))
   .pipe(browserSync.stream())
 }
+
 // ???
 const scriptsDev = () => {
   return src(paths.srcJsMain)
@@ -208,6 +214,7 @@ const scriptsDev = () => {
     .pipe(dest(paths.distJsFolder))
     .pipe(browserSync.stream());
 }
+
 const htmlDev = () => {
   return src(paths.srcHtml)
     .pipe(plumber(notify.onError({
@@ -224,6 +231,7 @@ const htmlDev = () => {
     .pipe(dest(distFolder))
     .pipe(browserSync.stream());
 }
+
 const watchFilesDev = () => {
   browserSync.init({
     server: {
@@ -242,6 +250,7 @@ const watchFilesDev = () => {
   watch('src/images/**', imagesDev);
   watch('src/**/*.html', htmlDev);
 };
+
 exports.default = series(cleanDev, resourcesDev, fontsTtfToWoffDev, imagesDev, webpImagesDev, svgSpritesDev, stylesDev, scriptsDev, htmlDev, watchFilesDev);
 
 
@@ -250,10 +259,12 @@ exports.default = series(cleanDev, resourcesDev, fontsTtfToWoffDev, imagesDev, w
 const cleanBuild = () => {
   return del(buildFolder)
 };
+
 const resourcesBuild = () => {
   return src(paths.srcResourcesFolder)
   .pipe(dest(buildFolder))
 };
+
 const fontsTtfToWoffBuild = () => {
   src([`${paths.srcResourcesFolder}/**/*.ttf`])
   .pipe(plumber(notify.onError({
@@ -266,6 +277,7 @@ const fontsTtfToWoffBuild = () => {
   .pipe(ttf2woff2())
   .pipe(dest(buildFolder))
 }
+
 const imagesBuild = () => {
   return src(paths.srcImages)
   .pipe(plumber(notify.onError({
@@ -283,6 +295,7 @@ const imagesBuild = () => {
   ])))
   .pipe(dest(paths.buildImgFolder))
 };
+
 const webpImagesBuild = () => {
   return src(paths.srcImages)
     .pipe(webp({
@@ -291,6 +304,7 @@ const webpImagesBuild = () => {
     }))
     .pipe(dest(paths.buildImgFolder))
 };
+
 const svgSpritesBuild = () => {
   return src(paths.srcSvg)
     .pipe(
@@ -322,6 +336,7 @@ const svgSpritesBuild = () => {
     }))
     .pipe(dest(paths.buildImgFolder));
 }
+
 const stylesBuild = () => {
   return src(paths.srcScss)
   .pipe(plumber(notify.onError({
@@ -342,6 +357,7 @@ const stylesBuild = () => {
   .pipe(dest(paths.buildCssFolder))
   .pipe(browserSync.stream())
 }
+
 // ???
 const scriptsBuild = () => {
   return src(paths.srcJsMain)
@@ -380,6 +396,7 @@ const scriptsBuild = () => {
     .pipe(dest(paths.buildJsFolder))
     .pipe(browserSync.stream());
 }
+
 const htmlBuild = () => {
   return src(paths.srcHtml)
     .pipe(plumber(notify.onError({
@@ -396,6 +413,7 @@ const htmlBuild = () => {
     .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
 }
+
 const htmlMinifyBuild = () => {
   return src(`${buildFolder}/*.html`)
   .pipe(version({
@@ -416,6 +434,7 @@ const htmlMinifyBuild = () => {
   .pipe(dest(buildFolder))
   .pipe(browserSync.stream())
 };
+
 const watchFilesBuild = () => {
   browserSync.init({
     server: {
@@ -432,10 +451,12 @@ const watchFilesBuild = () => {
   watch('src/scripts/**', scriptsBuild);
   watch('src/**/*.html', htmlBuild);
 };
+
 const toProd = (done) => {
   isProd = true;
   done();
 };
+
 exports.build = series(toProd, cleanBuild, resourcesBuild, fontsTtfToWoffBuild, imagesBuild, webpImagesBuild, svgSpritesBuild, stylesBuild, scriptsBuild, htmlBuild, htmlMinifyBuild, watchFilesBuild);
 
 
@@ -456,6 +477,7 @@ const stylesBackend = () => {
     .pipe(dest(paths.buildCssFolder))
     .pipe(browserSync.stream());
 };
+
 const scriptsBackend = () => {
   return src(paths.srcJsMain)
     .pipe(plumber(notify.onError({
@@ -492,6 +514,7 @@ const scriptsBackend = () => {
     .pipe(dest(paths.buildJsFolder))
     .pipe(browserSync.stream());
 }
+
 exports.backend = series(toProd, cleanBuild, resourcesBuild, fontsTtfToWoffBuild, imagesBuild, webpImagesBuild, svgSpritesBuild, stylesBackend, scriptsBackend, htmlBuild, watchFilesBuild);
 
 
@@ -512,9 +535,12 @@ const deploy = () => {
     title: "DEPLOY",
     message: "Error: <%= error.message %>"
   })))
-  .pipe(connect.newer(ftpNameFolder))
-  .pipe(connect.dest(ftpNameFolder));
+  .pipe(connect.newer(ftpData.folder))
+  .pipe(connect.dest(ftpData.folder));
+  // .pipe(connect.newer(ftpNameFolder))
+  // .pipe(connect.dest(ftpNameFolder));
 }
+
 exports.deploy = deploy;
 
 
@@ -530,7 +556,9 @@ const zipFile = () => {
   .pipe(zip(`${buildFolder}.zip`))
   .pipe(dest('./'));
 }
+
 exports.zipFile = zipFile;
+
 
 
 exports.cleanDev = cleanDev;

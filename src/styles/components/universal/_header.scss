@@ -20,26 +20,11 @@
   }
 
   &__nav {
+    width: 70%;
     min-width: 610px;
     margin-right: 10px;
     font-size: 35px;
     line-height: 41px;
     color: $color-white_text;
-  }
-
-  &__languages {
-    font-size: 35px;
-    line-height: 41px;
-    color: $color-white_text;
-
-    &-btn {
-      vertical-align: middle;
-      text-transform: uppercase;
-
-      &--active {
-        font-weight: 700;
-        color: $color-pink;
-      }
-    }
   }
 }

@@ -15,16 +15,11 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Language buttons
-const btnEng = document.querySelector('#en');
-btnEng.addEventListener('click', (e) => {
-  alert('Англоязычная страница на стадии разработки');
-});
-
 // Modal
 const body = document.querySelector('.body');
 const modalOverlay = document.querySelector('.modal__overlay');
-const modalBtns = document.querySelectorAll('.services__card-btn');
+// const modalBtns = document.querySelectorAll('.services__card-btn');
+const modalBtns = document.querySelectorAll('.modal-btn');
 const modalWindows = document.querySelectorAll('.modal__window');
 const feedbackBtns = document.querySelectorAll('.modal__btn');
 const closeBtns = document.querySelectorAll('.modal__close');

@@ -22,18 +22,39 @@
 
 .team-swiper {
   padding-bottom: 220px;
+
   &__list {
     padding: 0;
     margin: 0;
     list-style: none;
   }
 
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 90px;
+    height: auto;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  img {
+    height: 450px;
+  }
+
   &__descr {
     position: absolute;
     bottom: 0;
     left: 0;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
     padding: 14px 12px 20px 25px;
-    max-width: 70%;
+    min-height: 120px;
+    max-width: 65%;
     color: $color-white;
     background-color: $color-pink;
 
@@ -50,33 +71,7 @@
   }
 
   .swiper {
-    &-slide {
-      display: flex;
-      justify-content: end;
-      padding-bottom: 90px;
-    }
-
-    &-button-next {
-      top: 90%;
-      height: 20px;
-      width: 365px;
-      font-size: 16px;
-      color: $color-pink;
-
-      span {
-        margin-right: 10px;
-      }
-
-      &::after {
-        content: "";
-        // padding-right: 100px;
-        // height: 100%;
-        // width: 100%;
-        // background-image: url("../images/teams-man1.jpg");
-        // background-color: blue;
-      }
-    }
-
+    &-button-next,
     &-button-prev {
       top: 90%;
       height: 24px;
@@ -84,12 +79,132 @@
 
       &::after {
         content: "";
-        // padding-right: 100px;
-        // height: 100%;
-        // width: 100%;
-        // background-image: url("../images/teams-man1.jpg");
-        // background-color: blue;
       }
     }
+
+    &-button-next {
+      width: 365px;
+      font-size: 16px;
+      line-height: 21px;
+      color: $color-pink;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.modal-team {
+  position: relative;
+  padding: 0;
+  height: max-content;
+  font-size: 25px;
+  line-height: 29px;
+
+  &__body {
+    max-width: 1300px;
+    display: flex;
+  }
+
+  &__left {
+    padding: 80px 15px 80px 40px;
+    width: 20%;
+    min-width: max-content;
+    background-color: $color-dark_blue;
+    color: $color-white;
+
+    &-img {
+      margin-bottom: 70px;
+    }
+
+    &-name {
+      margin: 0;
+      margin-bottom: 70px;
+      max-width: 400px;
+      font-size: 60px;
+      line-height: 70px;
+      font-weight: 700;
+      color: $color-pink;
+    }
+
+    &-item {
+      max-width: 400px;
+
+      &:not(:last-child) {
+        margin-bottom: 70px;
+      }
+
+      span {
+        font-weight: 700;
+      }
+
+      a {
+        &[href] {
+          text-decoration: underline;
+        }
+
+        &:not([href]):hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-social {
+      display: flex;
+
+      a {
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  &__right {
+    padding: 80px 50px;
+    height: max-content;
+
+    &-title {
+      padding-left: 10px;
+      margin-bottom: 60px;
+      border-left: 6px solid $color-pink;
+    }
+
+    .competencies__list {
+      list-style-type: disc;
+    }
+
+    .experience__list {
+      list-style-type: disc;
+    }
+
+    &-item {
+      margin-bottom: 60px;
+
+      a {
+        font-style: italic;
+        text-decoration: underline;
+      }
+    }
+
+    &-subtitle {
+      margin: 0;
+      margin-bottom: 30px;
+      color: $color-pink;
+    }
+
+    &-text {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 35px 90px;
+    background-color: $color-dark_blue;
   }
 }
