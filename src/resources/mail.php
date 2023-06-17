@@ -1,14 +1,12 @@
 <?php
-// Файлы phpmailer
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
+require 'mail-data.php'; // файл с данными по отправке писем
 
-// $title = "Тема письма Отправка с сайта Bytes & Rights";
 $file = $_FILES['file'];
 $c = true;
 // Формирование самого письма
-$title = "Bytes $ Rights";
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
@@ -22,20 +20,19 @@ foreach ( $_POST as $key => $value ) {
 $body = "<table style='width: 100%;'>$body</table>";
 // Настройки PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
-
 try {
   $mail->isSMTP();
   $mail->CharSet = "UTF-8";
   $mail->SMTPAuth   = true;
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = 'gromilaspb@gmail.com'; // Логин на почте
-  $mail->Password   = 'palrvlyfkgtunegy'; // Пароль на почте
-  $mail->SMTPSecure = 'ssl';
-  $mail->Port       = 465;
-  $mail->setFrom('gromilaspb@gmail.com', 'Заявка с вашего сайта Bytes & Rights'); // Адрес самой почты и имя отправителя
+  $mail->Host       = $mailHost; // SMTP сервера вашей почты
+  $mail->Username   = $mailUsername; // Логин на почте
+  $mail->Password   = $mailPassword; // Пароль на почте
+  $mail->SMTPSecure = $mailSMTPSecure;
+  $mail->Port       = $mailPort;
+  $mail->setFrom($mailSetForm['email'], $mailSetForm['title']); // Адрес самой почты и имя отправителя
   // Получатель письма
-  $mail->addAddress('v1230321@gmail.com');
+  $mail->addAddress($mailAddAdress);
   // $mail->addAddress(''); // если нужен
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {
@@ -51,9 +48,9 @@ try {
     }
   }
   // Отправка сообщения
-  $mail->isHTML(true);
-  $mail->Subject = $title;
-  $mail->Body = $body;
+  $mail->isHTML(true); // Ввиде HTML
+  $mail->Subject = $mailTitle; // Заголовок письма
+  $mail->Body = $body; // Тело письма
   $mail->send();
 
 } catch (Exception $e) {
