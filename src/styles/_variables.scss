@@ -1,7 +1,8 @@
 // Base
 $font-family: "Roboto", sans-serif;
-$content-width: 1500px;
+$content-width: 1444px;
 $container-offset: 50px;
+$container: $content-width + $container-offset * 2;
 $font-size: 40px;
 $line-height: 50px;
 

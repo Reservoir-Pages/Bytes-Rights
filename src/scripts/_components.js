@@ -1,10 +1,4 @@
-// import './components/accordion';
-// import './components/counter';
-// import './components/header-btns';
-// import './components/selects';
-// import './components/smooth-scroll';
-// import './components/swipers';
-
-// Page
-import './components/index'
-import './components/swipers'
+import './components/services';
+import './components/swipers';
+import './components/_modals';
+import './components/_send-mail';

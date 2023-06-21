@@ -33,6 +33,7 @@ try {
   $mail->setFrom($mailSetForm['email'], $mailSetForm['title']); // Адрес самой почты и имя отправителя
   // Получатель письма
   $mail->addAddress($mailAddAdress);
+  $mail->addAddress($mailAddAdress2);
   // $mail->addAddress(''); // если нужен
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {
