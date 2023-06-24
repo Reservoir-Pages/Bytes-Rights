@@ -61,12 +61,15 @@
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
 
     // &:focus-within,
+    &.is-focused,
+    &:focus-visible,
     &:hover {
       z-index: 1;
       height: max-content;
       display: flex;
       background-color: $color-pink;
       color: $color-white;
+      outline: 2px solid greenyellow;
 
       .services__card-content {
         display: block;

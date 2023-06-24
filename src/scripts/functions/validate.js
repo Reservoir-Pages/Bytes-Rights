@@ -1,89 +1,50 @@
-function formValidate() {
-  const inputs = document.querySelectorAll('.form__input');
-  const sendBtn = document.querySelector('.form__btn');
+function setFieldColor(field, validate) {
+  if(validate) {
+    field.style.borderColor = 'green';
+  } else {
+    field.style.borderColor = 'red';
+  }
 
-  inputs.forEach((input) => {
-    input.addEventListener('input', () => {
-      let validatesArray = [];
-
-      inputs.forEach((input, i) => {
-        if(validate(input)) {
-          validatesArray[i] = validate(input);
-        } else {
-          validatesArray = [];
-        };
-      });
-
-      if(validatesArray.length === 3) {
-        sendBtn.disabled = false;
-      } else {
-        sendBtn.disabled = true;
-      }
-    });
-    input.addEventListener('paste', () => {
-      validate(input);
-    });
-  });
+  return validate;
 };
-formValidate();
 
-// function formValidate() {
-//   const inputs = document.querySelectorAll('.form__input');
-//   const sendBtn = document.querySelectorAll('.form__btn');
-
-//   inputs.forEach((input, i) => {
-//     input.addEventListener('input', () => {
-//       let validatesArray = [];
-//       console.log(validate(input));
-//       if(validate(input)) {
-//         console.log('111');
-//       } else {
-//         console.log('222');
-//       }
-//     });
-//     input.addEventListener('paste', () => {
-//       validate(input);
-//     });
-//   });
-// };
-// formValidate();
-
-function validate(element) {
+function fieldValidate(field) {
   const rePhone = /^[+]*[()\s0-9-]+$/;
-  const reEmail = /^[a-z0-9_]+@+[a-z_]+\.+[a-z]+$/;
+  const reEmail = /^[a-zA-Z0-9_!#$%;+-.=?^^`{}|~]+@[a-z_]+\.+[a-z]+$/;
   const reFullname = /^[А-яa-zA-Z]+[-|\s|А-яa-zA-Z]*[А-яa-zA-Z]+$/;
-  const value = element.value
-
   let elValidate = false;
-  switch(element.name) {
+
+  switch(field.name) {
     case 'phone':
-      if(value.length > 7 && value.length < 20 && rePhone.test(value)) {
-        element.style.borderColor = 'green';
-        elValidate = true;
-      } else {
-        element.style.borderColor = 'red';
-        elValidate = false;
-      };
+      elValidate = setFieldColor(field, field.value.length >= 7 && field.value.length < 20 && rePhone.test(field.value))
     break;
     case 'email':
-      if (reEmail.test(value)) {
-        element.style.borderColor = 'green';
-        elValidate = true;
-      } else {
-        element.style.borderColor = 'red';
-        elValidate = false;
-      };
+      elValidate = setFieldColor(field, reEmail.test(field.value) && field.value.length < 50)
     break;
     default:
-      if (value.length > 2 && value.length < 50 && reFullname.test(value)) {
-        element.style.borderColor = 'green';
-        elValidate = true;
-      } else {
-        element.style.borderColor = 'red';
-        elValidate = false;
-      };
+      elValidate = setFieldColor(field, field.value.length > 2 && field.value.length < 50 && reFullname.test(field.value))
     break;
   };
 
   return elValidate;
 };
+
+function formValidate(formBtn, formInput) {
+  let checkResults = [];
+
+  document.querySelectorAll(formInput).forEach((input, i) => {
+    input.addEventListener('input', () => {
+      checkResults[i] = fieldValidate(input);
+      document.querySelector(formBtn).disabled = !(checkResults.length === 3 && !checkResults.includes(false));
+    });
+    input.addEventListener('paste', () => {
+      fieldValidate(input);
+    });
+  });
+};
+
+formValidate('.form__btn', '.form__input');
+
+
+
+

@@ -37,8 +37,15 @@
 
   &__link {
     display: inline-block;
-    font-style: italic;
-    text-decoration: underline;
+
+    &[href] {
+      font-style: italic;
+      text-decoration: underline;
+    }
+
+    &:not([href]) {
+      opacity: 1;
+    }
 
     &:not(:last-child) {
       margin-bottom: 25px;
