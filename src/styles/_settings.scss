@@ -1,6 +1,5 @@
 .html {
   box-sizing: border-box;
-  // height: 100%;
   max-width: 100%;
   min-width: 1366px;
   -webkit-text-size-adjust: 100%;
@@ -16,7 +15,6 @@
 
 .body {
   height: 100%;
-  // min-height: 100%;
   margin: 0;
   font-family: $font-family;
   font-size: $font-size;
@@ -68,7 +66,6 @@ img {
 }
 
 .container {
-  // max-width: $content-width;
   max-width: $container;
   padding: 0 $container-offset;
   margin: 0 auto;

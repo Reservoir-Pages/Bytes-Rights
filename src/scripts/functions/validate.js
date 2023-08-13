@@ -10,7 +10,13 @@ function setFieldColor(field, validate) {
 
 function fieldValidate(field) {
   const rePhone = /^[+]*[()\s0-9-]+$/;
-  const reEmail = /^[a-zA-Z0-9_!#$%;+-.=?^^`{}|~]+@[a-z_]+\.+[a-z]+$/;
+
+
+
+  const reEmail = /^[a-zA-Z0-9_!#&$%;+-=?^^`{}|~]+@[a-z_]+\.+[a-z]+$/;
+
+
+
   const reFullname = /^[А-яa-zA-Z]+[-|\s|А-яa-zA-Z]*[А-яa-zA-Z]+$/;
   let elValidate = false;
 
