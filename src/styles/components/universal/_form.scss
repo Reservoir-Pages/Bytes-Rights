@@ -31,6 +31,7 @@
     height: 95px;
     width: 100%;
     padding: 0 40px;
+    border-width: 3px;
     border-radius: 4px;
     color: #3c3e4b;
     background-color: $color-white;
@@ -61,18 +62,8 @@
   }
 
   &__btn {
-    display: block;
     padding: 30px 120px;
     margin: 0 auto;
-    border-radius: 4px;
-    font-family: "RobotoSlab", sans-serif;
-    font-weight: 600;
-    color: $color-white_text;
-    text-transform: uppercase;
-    background-color: $color-pink;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-    opacity: 0.9;
-    transition: opacity 0.3s ease-in-out;
 
     &:hover {
       opacity: 0.7;

@@ -84,6 +84,21 @@ img {
   font-weight: 700;
 }
 
+.btn {
+  display: block;
+  padding: 30px;
+  border-radius: 4px;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: $color-white_text;
+  text-transform: uppercase;
+  background-color: $color-pink;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .scroll-point {
   position: absolute;
   top: -170px;
