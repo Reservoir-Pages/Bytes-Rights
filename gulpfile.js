@@ -637,8 +637,6 @@ const deploy = () => {
     )
     .pipe(connect.newer(ftpData.folder))
     .pipe(connect.dest(ftpData.folder));
-  // .pipe(connect.newer(ftpNameFolder))
-  // .pipe(connect.dest(ftpNameFolder));
 };
 
 exports.deploy = deploy;
