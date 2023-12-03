@@ -9,7 +9,7 @@ function sendMail() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        postDb(formData);
+        // postDb(formData);
         sendMessage.classList.add("send-modal--visible");
         setTimeout(() => sendMessage.classList.remove("send-modal--visible"), 2000);
       }
@@ -20,11 +20,11 @@ function sendMail() {
   form.reset();
 }
 
-function postDb(formData) {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "../db.php", true);
-  xhr.send(formData);
-}
+// function postDb(formData) {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open("POST", "../db.php", true);
+//   xhr.send(formData);
+// }
 
 if (form) {
   form.addEventListener("submit", (e) => {

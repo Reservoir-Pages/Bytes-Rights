@@ -2,5 +2,10 @@
   "host": "",
   "user": "",
   "password": "",
-  "folder": ""
+  "folder": "",
+
+  "hostProd": "",
+  "userProd": "",
+  "passwordProd": "",
+  "folderProd": ""
 }
