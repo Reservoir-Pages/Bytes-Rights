@@ -2,7 +2,7 @@
 const { src, dest, series, watch } = require("gulp"); // подключаем функции gulp
 const gulpif = require("gulp-if"); // условие если
 const nodePath = require("path"); // получение названия папки проекта
-// Удаление
+// Удаление папки исходников
 const del = require("del"); // подключаем, библиотеку del(для удаления директорий и файлов)
 // Создание спрайта
 const svgSprite = require("gulp-svg-sprite"); // подключаем, библиотеку создания SVG-спрайтов из svg

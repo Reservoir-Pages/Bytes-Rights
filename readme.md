@@ -1,3 +1,3 @@
 ## Bytes & Rights
 
-[Link to site](http:// "Сайт размещен на GitHub Pages")
+[Link to site](https://reservoir-pages.github.io/Bytes-Rights/ "Сайт размещен на GitHub Pages")
