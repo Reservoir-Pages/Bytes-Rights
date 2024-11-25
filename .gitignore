@@ -1,3 +1,4 @@
+.git
 .idea
 .vscode
 node_modules
@@ -5,4 +6,3 @@ build
 dist
 ftp-data.json
 mail-data.php
-*.zip
